@@ -9,6 +9,9 @@ import Navebar from "./components/Navebar";
 import BlogDetails from "./components/BlogDetails";
 import NavbarSecond from "./componentsecond/NavbarSecond";
 import HomeSecond from "./componentsecond/HomeSecond";
+import SamzaraDisclaimer from "./components/SamzaraDisclaimer";
+import SamzaraPrivacyPolicy from "./components/SamzaraPrivacyPolicy";
+import ScrollButton from "./components/ScrollButton";
 
 // Layout for public users
 function PublicLayout() {
@@ -18,7 +21,10 @@ function PublicLayout() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
+        <Route path="/disclaimer" element={<SamzaraDisclaimer />} />
+        <Route path="/privacy-policy" element={<SamzaraPrivacyPolicy />} />
       </Routes>
+      <ScrollButton/>
       <Footer />
     </>
   );

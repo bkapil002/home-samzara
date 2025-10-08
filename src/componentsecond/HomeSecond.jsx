@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { LayoutDashboard, Rss , Menu, X } from "lucide-react";
-import video from "../Image/video.mp4";
+
 import PostEditor from "./PostEditor";
-import BlogSlider from "../components/BlogSlider";
 import BlogUpdate from "./BlogUpdate";
 
 const HomeSecond = () => {

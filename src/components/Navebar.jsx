@@ -28,9 +28,9 @@ const Navebar = () => {
     <nav className="shadow-lg bg-white">
       <div className="flex items-center justify-between py-4 px-4 sm:px-8 md:px-19 lg:px-16">
         {/* Logo */}
-        <div className="flex w-[120px] md:w-[153px]">
+        <a href="/" className="flex w-[120px] md:w-[153px]">
           <img src={logo} alt="Logo" className="w-full"/>
-        </div>
+        </a>
 
         {/* Hamburger (mobile) */}
         <div className="md:hidden">
@@ -55,14 +55,6 @@ const Navebar = () => {
             className="text-[#707070] text-[20px] font-semibold"
           >
             Find Rehab
-          </a>
-          <a
-            href="https://community.samzara.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#707070] text-[20px] font-semibold"
-          >
-            Member
           </a>
           <div className="flex justify-center items-center gap-3 font-medium">
             <a
@@ -92,34 +84,18 @@ const Navebar = () => {
             href="https://findrehabcentres.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-[#707070] text-[16px] font-semibold py-1"
+            className="block text-[#707070]  text-center text-[16px] font-semibold py-1"
           >
             Find Rehab
           </a>
-          <a
-            href="https://community.samzara.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-[#707070] text-[16px] font-semibold py-1"
-          >
-            Member
-          </a>
           <div className="flex flex-col gap-1 pt-2">
-            <a
-              href="https://community.samzara.in/register"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-[#707070] text-[16px] font-semibold "
-            >
-              Sign Up
-            </a>
             <a
               href="https://community.samzara.in"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-indigo-900 text-white text-[14px] px-[16px] py-2 mt-1 cursor-pointer rounded-full text-center"
             >
-              Sign In
+              Sign Up / Sign In
             </a>
           </div>
         </div>

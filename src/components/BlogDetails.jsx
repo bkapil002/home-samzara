@@ -79,7 +79,6 @@ const BlogDetails = () => {
         </div>
       )}
 
-      {/* Content */}
       <div
         className="prose px-4  sm:px-8 md:px-19 lg:px-16 max-w-none mb-6 custom-content"
         style={{

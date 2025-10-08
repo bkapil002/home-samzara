@@ -78,4 +78,37 @@ router.get("/blog/:id", async (req, res) => {
   }
 });
 
+router.delete("/delete-posts/:id", async (req, res) => {
+  try {
+    await Post.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: "Post deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to delete post" });
+  }
+});
+
+router.put("/update-post/:id", async (req, res) => {
+  try {
+    const { title, content, mainImage, embeddedImages } = req.body;
+
+    const updatedPost = await Post.findByIdAndUpdate(
+      req.params.id,
+      { title, content, mainImage, embeddedImages },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedPost) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+
+    res.status(200).json({
+      message: "Post updated successfully",
+      post: updatedPost,
+    });
+  } catch (err) {
+    console.error("Error updating post:", err);
+    res.status(500).json({ error: "Failed to update post" });
+  }
+});
+
 module.exports = router;
