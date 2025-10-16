@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 
+
 export default function PostEditor() {
   const [heading, setheading] = useState("");
   const [content, setContent] = useState("");
@@ -245,12 +246,13 @@ export default function PostEditor() {
         type="button"
         onClick={handlePublish}
         disabled={isPublishing}
-        className={`px-6 py-3 bg-blue-600 mt-4 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out ${
+        className={`px-6 py-3  bg-blue-600 mt-4 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out ${
           isPublishing ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
         {isPublishing ? "Publishing..." : "Publish"}
       </button>
+
     </div>
   );
 }

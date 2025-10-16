@@ -31,11 +31,25 @@ const BlogSlider = () => {
 
   if (loading) {
     return (
-      <div className="w-full max-w-7xl mx-auto py-8 px-4">
-        <div className="flex justify-center items-center h-64">
-          <p className="text-gray-600">Loading blogs...</p>
+        <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-8 md:px-19 lg:px-16 ">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {[1, 2, 3].map((index) => (
+      <div
+        key={index}
+        className={`bg-white rounded-lg overflow-hidden shadow-lg animate-pulse
+          ${index === 2 ? "hidden sm:block lg:block" : ""}
+          ${index === 3 ? "hidden lg:block" : ""}`}
+      >
+        <div className="relative h-64 w-full bg-gray-200"></div>
+
+        <div className="p-6 space-y-4">
+          <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+          <div className="h-4 bg-gray-200 rounded w-1/2"></div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
     );
   }
 
@@ -80,11 +94,12 @@ const BlogSlider = () => {
           <SwiperSlide key={post._id}>
             <div onClick={() => navigate(`/blog/${post._id}`)}  className="bg-white cursor-pointer rounded-lg overflow-hidden shadow-lg h-full flex flex-col hover:shadow-xl transition-shadow">
               {/* Date Badge */}
-              <div className="absolute top-4 left-4 bg-white rounded-lg shadow-md p-3 z-10">
-                <div className="text-2xl font-bold text-gray-800">
+              <div className="absolute top-4 left-4 bg-white rounded-[5px] shadow-md p-3 z-10">
+                <div className="text-[21px] text-center font-bold text-[#4d4d4d]">
                   {new Date(post.createdAt).getDate()}
                 </div>
-                <div className="text-xs text-gray-600 uppercase">
+                <div className="  border-[1px] -mt-1 mb-0.5 text-[#4d4d4d] " />
+                <div className="text-xs text-[#4d4d4d] uppercase">
                   {new Date(post.createdAt).toLocaleString('en', { month: 'short' })}
                 </div>
               </div>
@@ -92,6 +107,7 @@ const BlogSlider = () => {
                   <img
                     src={post.mainImage || "https://findrehabcentres.com/wp-content/uploads/2025/10/Taking-the-First-Step-Toward-Healing.jpg" }
                     alt={post.heading}
+                    loading="lazy"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -108,10 +124,10 @@ const BlogSlider = () => {
 
       {/* Navigation buttons */}
       <div className="flex justify-center mt-8 gap-4">
-        <button className="custom-prev-button w-12 h-12  cursor-pointer flex items-center justify-center border-2 border-gray-300 rounded-lg hover:bg-gray-100 hover:border-gray-400 transition-all text-2xl font-bold text-gray-700">
+        <button className="custom-prev-button w-10 h-10  cursor-pointer flex items-center justify-center border-2 border-gray-300 rounded-lg hover:bg-gray-100 hover:border-gray-400 transition-all text-2xl font-bold text-gray-700">
           <ChevronLeft />
         </button>
-        <button className="custom-next-button w-12 h-12 cursor-pointer flex items-center justify-center border-2 border-gray-300 rounded-lg hover:bg-gray-100 hover:border-gray-400 transition-all text-2xl font-bold text-gray-700">
+        <button className="custom-next-button w-10 h-10   cursor-pointer flex items-center justify-center border-2 border-gray-300 rounded-lg hover:bg-gray-100 hover:border-gray-400 transition-all text-2xl font-bold text-gray-700">
           <ChevronRight />
         </button>
       </div>

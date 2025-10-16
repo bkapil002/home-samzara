@@ -32,7 +32,10 @@ const Home = () => {
           autoPlay
           loop
           muted
+          playsInline
           className="w-full rounded-2xl h-[90vh] md:h-auto lg:h-auto object-cover"
+          fetchpriority="high"
+          preload="metadata"
         />
       </div>
 
@@ -67,16 +70,17 @@ const Home = () => {
           {/* Right Side - Content */}
           <div className="flex-1 flex flex-col w-full" data-aos="fade-up">
             <p className="text-gray-700 text-center md:text-right mb-6 text-sm sm:text-base">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              <b>
+                Samzara is a social network with a purpose. Built for people who
+                believe in connection, compassion, and change.
+              </b>{" "}
+              <br />A safe and inclusive space to share your journey, exchange
+              hope stories, and find encouragement. Find inspiration from others
+              walking similar paths. Join groups, meet people online, even
+              anonymously. Take part in conversations that inspire growth and
+              positivity. With tools, resources, and a supportive community by
+              your side, Samzara helps you connect, heal, and make a difference
+              together.
             </p>
 
             {/* Button aligned right */}
@@ -110,7 +114,7 @@ const Home = () => {
           data-aos="fade-up"
           data-aos-anchor-placement="center-bottom"
         >
-          De-Addiction Anonymous
+          Explore the Docter
         </h1>
 
         {/* Flex container for image + text */}
@@ -132,18 +136,25 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
           >
+            <h4 className="font-semibold text-[#3C3C3C] text-[18px] mb-2 text-center md:text-left">
+             Professional Support That Also Feels Personal.
+            </h4>
             <p className="text-[#3C3C3C] mb-6 text-center md:text-left text-sm sm:text-base">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown
+              Samzara connects you with <b> clinical experts and qualified
+              de-addiction doctors.</b> They understand what real recovery takes.
+              Discover practical strategies that help you take control. Whether
+              through group sessions or one-on-one guidance, professionals at
+              SamZara are here to listen. The support that enables you to take
+              confident steps toward a healthier, happier life. All in a safe
+              and confidential space.
             </p>
 
-            <h4 className="font-semibold text-[#3C3C3C] mb-3 text-center md:text-left">
+            {/* <h4 className="font-semibold text-[#3C3C3C] mb-3 text-center md:text-left">
               Doctors in high demand
-            </h4>
+            </h4> */}
 
             {/* Pills */}
-            <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
+            {/* <div className="flex flex-wrap gap-2 mb-6 justify-center md:justify-start">
               {[
                 "Methamp",
                 "Weed",
@@ -165,14 +176,11 @@ const Home = () => {
                   {item}
                 </span>
               ))}
-            </div>
+            </div> */}
 
             <p className="text-[#3C3C3C] mb-6 text-center md:text-left text-sm sm:text-base">
-              Printer took a galley of type and scrambled it to make a type
-              specimen book. It has survived not only five centuries, but also
-              the leap into electronic typesetting, remaining essentially
-              unchanged. It was popularised in the 1960s with the release of
-              Letraset sheets Ipsum.
+              Real people. Real support. An online space built on hope, trust,
+              and empathy.
             </p>
 
             {/* Button */}
@@ -200,8 +208,8 @@ const Home = () => {
       <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
         <JoinMember />
       </div>
-       <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-        <BlogSlider/>
+      <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+        <BlogSlider />
       </div>
     </div>
   );
